@@ -3,13 +3,24 @@
     const canv = document.getElementById('canv');
     const ctx = canv.getContext('2d');
 
-    function draw(w, h) {
-        for (let i = 0; i < w; i++) {
-            for (let j = 0; j < h; j++) {
-                ctx.fillRect(20*i, 20*j, 10, 10);
-            }
-        }
+    function drawHouse() {
+        // House body
+        ctx.fillStyle = 'brown';
+        ctx.fillRect(100, 150, 100, 100);
+
+        // Roof (Triangle)
+        ctx.fillStyle = 'red';
+        ctx.beginPath();
+        ctx.moveTo(100, 150);  // Left corner
+        ctx.lineTo(200, 150);  // Right corner
+        ctx.lineTo(150, 100);  // Top peak
+        ctx.closePath();
+        ctx.fill();
+
+        // Door
+        ctx.fillStyle = 'black';
+        ctx.fillRect(140, 200, 20, 50);
     }
-    draw(10, 4);
-    
+
+    drawHouse();
 </script>
